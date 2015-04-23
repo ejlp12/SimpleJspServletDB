@@ -1,6 +1,7 @@
 package com.daniel.controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -42,6 +43,14 @@ public class UserController extends HttpServlet {
         } else if (action.equalsIgnoreCase("listUser")){
             forward = LIST_USER;
             request.setAttribute("users", dao.getAllUsers());
+        } else if (action.equalsIgnoreCase("initdb")){
+            forward = LIST_USER;   	
+            if ( dao.setupDb() ) {
+            	request.setAttribute("users", dao.getAllUsers());
+            } else {
+            	throw new ServletException("Cannot initialize table on database. ");
+            }
+
         } else {
             forward = INSERT_OR_EDIT;
         }

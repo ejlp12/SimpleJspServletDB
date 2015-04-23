@@ -3,9 +3,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>Simple CRUD App</title>
 </head>
 <body>
-<jsp:forward page="/UserController?action=listUser" />
+<a href="UserController?action=initdb">Initialize database</a>
 </body>
 </html>

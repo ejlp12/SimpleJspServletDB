@@ -5,10 +5,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<link type="text/css"
-    href="css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />
-<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
 <title>Add new user</title>
 </head>
 <body>
@@ -29,10 +25,11 @@
             value="<c:out value="${user.lastName}" />" /> <br /> 
         DOB : <input
             type="text" name="dob"
-            value="<fmt:formatDate pattern="MM/dd/yyyy" value="${user.dob}" />" /> <br /> 
+            value="<fmt:formatDate pattern="MM/dd/yyyy" value="${user.dob}" />" /> (MM/dd/yyyy)<br /> 
         Email : <input type="text" name="email"
             value="<c:out value="${user.email}" />" /> <br /> <input
             type="submit" value="Submit" />
     </form>
+    <a href="UserController?action=listUser">List user</a>
 </body>
 </html>
